@@ -25,10 +25,6 @@
 	<meta property="og:title" content="{{ APP_NAME }}">
 	<meta property="og:description" content="{{ APP_DESCRIPTION }}">
 	<meta property="og:image" content="{{ APP_URL }}/img/hero.jpeg">
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&family=Ubuntu:wght@300;500;700&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/2eb80ea257.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" type="text/css" href="./static/css/landing.css">
 </head>

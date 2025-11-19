@@ -1,17 +1,16 @@
 @extends(head)
-
-    <link rel="stylesheet" type="text/css" href="./static/css/estaciones.css">
-
+        <link rel="stylesheet" href="./static/css/panel.css">
 
 <body>
     <header>
         <h1>Panel de {{ USER_NAME }}</h1>
+        <a href="?slug=logout" style="position: absolute; top: 20px; right: 20px; background-color: #D32F2F; color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; font-size: 14px;">Cerrar Sesión</a>
     </header>
 
     <div id="wrapper">
 
         <div id="list-estacion">
-            <div id="list-estacion-title">estaciones</div>
+            <div id="list-estacion-title">Estaciones</div>
         </div>
 
         <template id="tpl-btn-estacion">
@@ -34,7 +33,6 @@
     
     </div>
 
-    @extends(footer)
 
 
     <script type="text/javascript" src="./static/js/estaciones.js"></script>

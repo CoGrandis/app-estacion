@@ -1,5 +1,10 @@
 <?php 
 
+	//Verifico si esta logueado el usuario
+	if (isset($_SESSION['user'])) {
+		header("Location: ?slug=panel");	
+	}
+
 	/**
 	 * 
 	 * Se incluyen las librerias
@@ -11,6 +16,8 @@
 
 
 
+	$error = "";
+	$errno = "";
 
 	/**
 	 * 
@@ -22,10 +29,17 @@
 
 	if(isset($_POST["btn_login"])){
 
-		if($usuario->login($_POST)["errno"] == 202){
+		$result = $usuario->login($_POST); 
+		if($result["errno"] == 202){
 			header("Location: ?slug=panel");
+		} else if($result["errno"] == 203){
+			header("Location: ?slug=administrator");
 		}
+		$error = $result["error"];
+		$errno = $result["errno"];
+
 	}
+
 
 
 	/***
@@ -36,24 +50,9 @@
 
 	$tpl = new Enano("login");
 
-	$tpl->assignVar(["CANT_USER" => $usuario->getCant(), "COMPONENT-TABLE" => "<table border='1'>
-		{{ ROWS }}
-	</table>"]);
-
-
-	$buffer_row = "";
-
-	for ($i=0; $i < 10; $i++) { 
-		$buffer_row .= "<tr>$i</tr>";
-	}
-
-
-	$tpl->assignVar(["ROWS" => $buffer_row]);
-
-
 	/*para asignar valor a las variables dentro la plantilla*/
 	/* formato {{ variable }} valor a pasar como un vector asociativo [ variable_html => valor] */
-	$tpl->assignVar(["APP_SECTION" => "Login"]);
+	$tpl->assignVar(["APP_SECTION" => "Login", "ERRNO" => $errno, "ERROR" => $error]);
 
 	$tpl->printToScreen();
 

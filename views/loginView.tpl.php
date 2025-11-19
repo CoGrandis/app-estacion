@@ -1,23 +1,18 @@
 @extends(head)
-    <link rel="stylesheet" type="text/css" href="./static/css/landing.css">
+
 <body>
-     <header>
-        <h1>{{ APP_NAME }}</h1>
-
-    <nav>
-        <a href="?slug=login">Registrarse</a>
-    </nav>
-
-    </header>
-
-    	<div class="login-container">
-            <h2>Iniciar Sesión</h2>
-            <form action="?slug=login" method="POST">
-                <input type="email" name="txt_email" placeholder="Correo electrónico" required>
-                <input type="password" name="txt_password" placeholder="Contraseña" required>
-                <button type="submit" name="btn_login">Iniciar</button>
-            </form>
-        </div>
+    
+	<div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="?slug=login" method="POST">
+            <input type="text" name="txt_email" placeholder="Usuario o Email" required>
+            <input type="password" name="txt_password" placeholder="Contraseña" required>
+            <p><a href="?slug=recovery">Olvidaste tu contraseña?</a></p>
+            <button type="submit" name="btn_login">Acceder</button>
+            <p><a href="?slug=register">No tienes una cuenta? Registrarse</a></p>
+            {{ ERROR }}
+        </form>
+    </div>
 	
 	@extends(footer)
 </body>

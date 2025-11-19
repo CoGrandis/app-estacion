@@ -1,221 +1,293 @@
-:root{
-    --color-text-generic: white;
-    --color-text-important: red;
+/* ============================================================
+   ESTILOS GENERALES
+============================================================ */
+:root {
+    --primary: #0066ff;
+    --primary-dark: #004ccc;
+    --danger: #e53935;
+    --bg: #f5f7fb;
+    --text: #222;
+    --card-bg: #ffffff;
+    --gray: #666;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-
 }
 
-body{
+body {
+    background: var(--bg);
+    color: var(--text);
     min-height: 100vh;
-    overscroll-behavior: contain;
-    
 }
 
-header{
-    width: 100%;
-    padding: 1.2rem 2rem;
+/* LINKS */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   HEADER Y NAVEGACIÓN (Landing)
+============================================================ */
+header {
+    background: #fff;
+    padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    background: #4B63E0;
-    background: linear-gradient(180deg, rgba(75, 99, 224, 1) 0%, rgba(122, 90, 217, 1) 100%);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-
-header h1{
-    font-size: 1.8rem;
-    letter-spacing: 1px;
+header h1 {
+    font-size: 1.7rem;
 }
 
-header nav a{
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-header nav a:hover{
-}
-
-.hero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 0.5rem;
-    background-color: #ffffff;
-}
-
-
-.hero-text h2{
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
-
-.hero-text p{
-    font-size: 1.1rem;
-    max-width: 700px;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-.btn{
-    color: #4b47c8;
+header nav a {
     font-weight: bold;
-    padding: 0.9rem 1.4rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+header nav a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ============================================================
+   LANDING PAGE
+============================================================ */
+.hero {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, var(--primary), #0099ff);
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 20px;
+    line-height: 1.5rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--primary);
+    padding: 12px 20px;
     border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-    border:solid 2px #4b47c8;
+    font-weight: bold;
 }
 
-.btn:hover{
-
-}
-
-.features{
-    padding: 3rem 1.5rem;
+.features {
+    padding: 40px 20px;
     text-align: center;
-    margin-top: 2rem;
 }
 
-.features h3{
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+.feature-grid {
+    margin-top: 25px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.feature-grid{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: start;
+.feature {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.feature{
-    padding: 1.5rem;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 14px;
-    backdrop-filter: blur(3px);
-    border: 3px solid #4B63E0;
-}
-
-.feature h4{
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-.feature p{
-    opacity: 0.9;
-}
-
-footer{
-    background: #7A5AD9;
-    padding: 10px;
-    display: flex;
-
-}
-
-@media (min-width: 850px){
-    .hero{
-        flex-direction: row;
-        justify-content: center;
-        text-align: left;
-    }
-
-    .hero img{
-        width: 50%;
-        margin-right: 3rem;
-    }
-
-    .feature-grid{
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .feature{
-        width: 350px;
-    }
-}
-
-
-/* ===========================
-   ESTILOS LOGIN
-   =========================== */
-
+/* ============================================================
+   FORMULARIOS (Login - Register)
+============================================================ */
 .login-container {
-    width: 90%;
-    max-width: 420px;
-    margin: 4rem auto;
-    padding: 2.4rem 2rem;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(14px);
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
-    border: 2px solid rgba(255,255,255,0.35);
+    width: 95%;
+    max-width: 400px;
+    margin: 70px auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
 .login-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #4B63E0, #7A5AD9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .login-container input {
-    padding: 0.9rem 1rem;
-    border-radius: 10px;
-    border: 1px solid rgba(75,99,224,0.25);
-    background: rgba(255, 255, 255, 0.65);
-    font-size: 1rem;
-    transition: 0.25s;
-}
-
-.login-container input:focus {
-    outline: none;
-    border-color: #4B63E0;
-    box-shadow: 0 0 0 3px rgba(75, 99, 224, 0.3);
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .login-container button {
-    padding: 0.9rem;
-    border-radius: 10px;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
     border: none;
-    background: linear-gradient(135deg, #4B63E0, #7A5AD9);
+    border-radius: 8px;
     color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 20px;
     cursor: pointer;
-    transition: 0.25s;
-    box-shadow: 0 4px 10px rgba(75, 99, 224, 0.3);
 }
 
 .login-container button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 18px rgba(75, 99, 224, 0.4);
+    background: var(--primary-dark);
 }
 
-/* Responsivo */
-@media (min-width: 850px) {
-    .login-container {
-        margin-top: 6rem;
+.login-container p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ============================================================
+   BLOQUEO DE CUENTA
+============================================================ */
+.blocked-container {
+    width: 95%;
+    max-width: 450px;
+    margin: 70px auto;
+    padding: 30px;
+    background: var(--card-bg);
+    border-left: 5px solid var(--danger);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.blocked-container h2 {
+    color: var(--danger);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+/* ============================================================
+   PANEL ADMINISTRADOR
+============================================================ */
+.admin-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    font-size: 1.8rem;
+}
+
+.logout-btn {
+    background: var(--danger);
+    padding: 8px 14px;
+    color: white;
+    border-radius: 8px;
+}
+
+.logout-btn:hover {
+    background: #b71c1c;
+}
+
+.map-btn {
+    margin-top: 25px;
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.map-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* CONTADORES */
+.counters {
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.counter-card {
+    background: var(--card-bg);
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.counter-card h3 {
+    font-size: 1.2rem;
+}
+
+.counter-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--primary);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
     }
 }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px;
+    background: #ffffff;
+    color: #666;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid #e0e0e0;
+    background: var(--bg);
+
+}
+
+/* Mantener el footer abajo si el contenido es corto */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+

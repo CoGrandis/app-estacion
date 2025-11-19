@@ -112,6 +112,7 @@ async function refreshDatos(cantfilas){
 // Analiza el json, carga los valores y el gráfico
 // =================================
 function procesar(datos, addData = true){
+document.querySelector("#chart-loading").style.display = "flex";
 
 	let hora = ""
 
@@ -282,6 +283,7 @@ function procesar(datos, addData = true){
 // renderizamos el gráfico
 // =================================
 function renderCharts(estacion, fecha, itemsGrafico){
+document.querySelector("#chart-loading").style.display = "none";
 
 	// si el objeto gráfico ya esta instanciado lo destruyo para que se vuelva a crear limpio
 	if(myChart!=null){

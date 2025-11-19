@@ -1,16 +1,14 @@
 @extends(head)
-    <link rel="stylesheet" type="text/css" href="./static/css/landing.css">
 
 <body>
 
     <header>
         <h1>{{ APP_NAME }}</h1>
-
-    <nav>
+        <nav>
         <a href="?slug=login">Iniciar Sesión</a>
     </nav>
-
     </header>
+    
 
     <section class="hero">
         <div class="hero-text">
@@ -21,7 +19,7 @@
     </section>
 
     <section class="features" id="features">
-        <h3>¿Qué ofrece App-Estación?</h3>
+        <h3>¿Qué ofrece {{ APP_NAME }}?</h3>
         <div class="feature-grid">
             <div class="feature">
                 <h4>Datos en Tiempo Real</h4>
@@ -33,8 +31,8 @@
             </div>
         </div>
     </section>
-
     @extends(footer)
+
 
 </body>
 </html>
